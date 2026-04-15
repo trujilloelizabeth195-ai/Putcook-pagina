@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../GitHub/putcoook"
+		},
+		{
+			"path": "images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "putcoook",
+		"liveServer.settings.port": 5501
+	}
+}
