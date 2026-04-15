@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Contenedor principal */
-.kfc-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre filas */
-    max-width: 400px;
+@media (max-width: 768px) {
+  .center {
+    display: none; /* oculta buscador */
+  }
+
+  .right {
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
 }
 
 .kfc-row {
@@ -91,36 +97,6 @@
     max-width: 350px; /* Limita el ancho para que no se estire de más */
 }
 
-/* Filas de inputs (Nombre/Apellido y el grupo DNI) */
-.input-row {
-    display: flex;
-    gap: 8px; /* Espacio lateral entre cuadros */
-    width: 100%;
-}
-
-/* Estilo base para todos los cuadros */
-.kfc-input, .kfc-select {
-    background-color: transparent;
-    border: 1px solid #faf6f6;
-    border-radius: 4px;
-    color: #fff;
-    padding: 0 12px; /* Solo padding lateral */
-    font-size: 13px; /* Fuente un poco más pequeña */
-    height: 38px;    /* Altura compacta */
-    outline: none;
-    box-sizing: border-box;
-}
-
-/* Contenedor unido de DNI + Número */
-.doc-container {
-    display: flex;
-    width: 100%;
-    border: 1px solid #fff9f9;
-    border-radius: 4px;
-    height: 38px;
-    overflow: hidden;
-}
-
 .doc-container .kfc-select {
     border: none;
     border-right: 1px solid #333;
@@ -132,20 +108,6 @@
     border: none;
     flex: 1;
     height: 100%;
-}
-
-/* Botón ENVIAR más ajustado */
-.btn-kfc {
-    background-color: #e4002b;
-    color: white;
-    border: none;
-    height: 40px; /* Un poco más alto que los inputs para resaltar */
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 5px;
 }
 
 /* Filas de inputs */
@@ -233,8 +195,8 @@
 
 /* Contenedor principal del footer */
 .footer {
-    background-color: #000000; /* Fondo oscuro como la foto */
-    color: #000000;            /* Texto blanco */
+    background-color: #000; /* Fondo oscuro como la foto */
+    color: #ffffff;            /* Texto blanco */
     padding: 50px 0;
 }
 
@@ -322,45 +284,14 @@ body {
   background-color: #eee7e7;
 }
 
-.box-container {
-  display: flex;
-  gap: 20px;                      */espacio para cada producto */
-  padding: 20px 10px;
-  overflow-x: auto;               */permite el scroll */
-  scrollbar-width: smooth;
-}
-
-*/ Ocultar la barra de scroll para que se vea mas limpio */
-.box-container: ::-webkit-scrollbar {
+/* Ocultar la barra de scroll para que se vea mas limpio */
+.box-container::-webkit-scrollbar {
   display: none;
 } 
-
-/* Estilo general para las cajas de productos */
-.box {
-    background-color: #ffffff;    /* Fondo blanco como la foto */
-    border: 1px solid #e0e0e0;    /* El borde gris suave */
-    border-radius: 8px;           /* Bordes redondeados */
-    padding: 15px;
-    text-align: left;             /* Alineado a la izquierda como KFC */
-    min-width: 250px;             /* Ancho mínimo para que no se aplasten */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra muy sutil */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
 /* Efecto al pasar el mouse (opcional) */
 .box:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Estilo de la imagen dentro de la caja */
-.box img {
-    width: 100%;
-    height: 180px;                /* Altura fija para uniformidad */
-    object-fit: contain;          /* Evita que la foto se deforme */
-    margin-bottom: 10px;
 }
 
 /* Estilo del título (Nombre del plato) */
@@ -414,59 +345,13 @@ body {
   z-index: 9999;
 }
 
-.menu {
-  z-index: 1000;
-}
-
-.menu {
-  position: fixed;
-  top: 0;
-  right: -250px; /* escondido */
-  width: 250px;
-  height: 100%;
-  background: white;
-  transition: 0.3s;
-}
-
 .menu.abierto {
   right: 0;
 }
 
-.scroll-btn {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.scroll-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.box-container {
-  overflow-x: auto;
-  display: flex;
-  gap: 15px;
-  width: 100%;
-}
-
 .scroll-wrapper {
   position: relative;
   width: 100%;
-}
-
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #e4002b;
-  color: white;
-  border: none;
-  font-size: 20px;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .scroll-btn.left {
@@ -475,26 +360,6 @@ body {
 
 .scroll-btn.right {
   right: 10px;
-}
-
-/* BOTONES */
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #e4002b;
-  color: white;
-  border: none;
-  font-size: 20px;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-}
-
-/* IZQUIERDA */
-.scroll-btn.left {
-  left: -10px; /* 🔥 pegado a la izquierda */
 }
 
 /* DERECHA */
@@ -502,23 +367,6 @@ body {
   right: -10px; /* 🔥 pegado a la derecha */
 }
 
-.scroll-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.box-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding: 10px;
-  scroll-behavior: smooth;
-}
-
-.box-container::-webkit-scrollbar {
-  display: none;
-}
-
 /* BOTONES */
 .scroll-btn {
   position: absolute;
@@ -534,11 +382,6 @@ body {
   z-index: 10;
 }
 
-/* IZQUIERDA */
-.scroll-btn.left {
-  left: 10px;
-}
-
 /* DERECHA */
 .scroll-btn.right {
   right: 10px;
@@ -548,44 +391,12 @@ body {
   background: black;
 }
 
-
-.scroll-btn {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  background: #e4002b;
-  color: white;
-  border: none;
-  font-size: 20px;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-}
-
-.scroll-btn.left {
-  left: 0;
-}
-
-.scroll-btn.right {
-  right: 0;
-}
-
-.scroll-btn:hover {
-  background: black;
-}
-
-
 .box-container {
-  display: flex;         /* 🔥 fila horizontal */
-  overflow-x: auto;      /* 🔥 scroll lateral */
+  display: flex;         /*  fila horizontal */
+  overflow-x: auto;      /*  scroll lateral */
   gap: 15px;
   padding: 10px;
-}
-
-.box-container::-webkit-scrollbar {
-  display: none; /* opcional */
-}
+}  
 
 .box {
   min-width: 180px;      /* 🔥 clave */
@@ -625,10 +436,6 @@ html {
   flex-shrink: 0; /* evita que se aplasten */
 }
 
-.card {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
 .card img {
   width: 100%;
   height: 120px;
@@ -636,24 +443,12 @@ html {
   border-radius: 10px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 #inicio {
   scroll-margin-top: 80px;
 }
 
-.box {
-  transition: 0.3s;
-}
-
 .box:hover {
   transform: scale(1.05);
-}
-
-.box {
-  transition: 0.3s;
 }
 
 #menu-lateral a {
@@ -684,7 +479,7 @@ html {
 }
 
 .logo-img {
-  width: 100px;
+  height: 40px;
 }
 
 .center {
@@ -694,7 +489,8 @@ html {
 }
 
 .search {
-  width: 60%;
+  max-width: 400px;
+  width: 100%;
   padding: 8px;
   border-radius: 20px;
   border: none;
@@ -774,7 +570,7 @@ body{
 }
 
 .logo {
-    front-size: 30px;
+    font-size: 30px;
     color: #be1c06ec;
     text-transform: uppercase;
     font-weight: 800;
@@ -783,6 +579,8 @@ body{
 .menu .navbar ul li{
     position: relative;
     float: left;
+    scroll-margin-top: 80px;
+
 }
 
 .menu .navbar ul li a {
@@ -791,10 +589,14 @@ body{
     font-weight: 600;
     color: bisque;
     display: block;
+    scroll-margin-top: 80px;
+
 }
 
 .menu .navbar ul li a:hover{
     color: #be1c06ec;
+    scroll-margin-top: 80px;
+
 }
 
 #menu {
@@ -820,7 +622,7 @@ body{
     display: block;
     position: absolute;
     right: 0%;
-    back-drop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     top: 100%;
     z-index: 1;
     background-color: black;
@@ -832,18 +634,6 @@ body{
   color: white;
 }
 
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  z-index: 998;
-}
-
-
 #menu-lateral {
   position: fixed;
   top: 0;
@@ -853,18 +643,6 @@ body{
   background: white;
   transition: 0.3s;
   z-index: 999;
-  overflow-y: auto;
-}
-
-#menu-lateral {
-  position: fixed;   /* 🔥 CLAVE */
-  top: 0;
-  left: -300px;      /* oculto al inicio */
-  width: 300px;
-  height: 100%;
-  background: white;
-  z-index: 2000;     /* 🔥 más alto que la barra */
-  transition: 0.3s;
   overflow-y: auto;
 }
 
@@ -907,10 +685,6 @@ body{
 
 #menu-lateral.active {
   left: 0;
-}
-
-#menu-lateral {
-  transition: all 0.4s ease;
 }
 
 #overlay.active {
