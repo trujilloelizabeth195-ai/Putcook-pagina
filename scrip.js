@@ -13,6 +13,14 @@ tipoDoc.addEventListener('change', function() {
     }
 });
 
+const cerrar = document.getElementById("cerrar");
+const menu = document.getElementById("menu-lateral");
+const overlay = document.getElementById("overlay");
+
+cerrar.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
 
 // Bloquear letras, solo permitir números
 numDoc.addEventListener('input', function() {
