@@ -1314,3 +1314,7 @@ html, body {
 button, .cerrar-menu, .add-btn {
   cursor: pointer;
 }
+
+.cerrar-menu {
+  cursor: pointer;
+}
