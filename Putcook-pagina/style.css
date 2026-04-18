@@ -1310,3 +1310,7 @@ html, body {
     height: 28px;
   }
 }
+
+button, .cerrar-menu, .add-btn {
+  cursor: pointer;
+}
