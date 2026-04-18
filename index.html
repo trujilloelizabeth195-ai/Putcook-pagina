@@ -13,6 +13,19 @@
 
 <div id="menu-lateral">
 
+      <script>
+function abrirMenu() {
+  document.getElementById("menu-lateral").classList.add("active");
+  document.getElementById("overlay").classList.add("active");
+}
+
+function cerrarMenu() {
+  document.getElementById("menu-lateral").classList.remove("active");
+  document.getElementById("overlay").classList.remove("active");
+}
+    </script>
+
+
   <div class="menu-header">
     <h3>Iniciar sesión</h3>
     <span onclick="cerrarMenu()">✖</span>
