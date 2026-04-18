@@ -22,6 +22,7 @@ cerrar.addEventListener("click", () => {
   overlay.classList.remove("active");
 });
 
+
 // Bloquear letras, solo permitir números
 numDoc.addEventListener('input', function() {
     this.value = this.value.replace(/[^0-9]/g, '');
