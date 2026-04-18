@@ -13,6 +13,7 @@ tipoDoc.addEventListener('change', function() {
     }
 });
 
+
 // Bloquear letras, solo permitir números
 numDoc.addEventListener('input', function() {
     this.value = this.value.replace(/[^0-9]/g, '');
