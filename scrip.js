@@ -1,6 +1,22 @@
 const tipoDoc = document.getElementById('tipoDoc');
 const numDoc = document.getElementById('numDoc');
 
+const menu = document.getElementById("menu-lateral");
+const btn = document.querySelector(".menu-btn");
+const cerrar = document.getElementById("cerrar");
+const overlay = document.getElementById("overlay");
+
+btn.addEventListener("click", () => {
+  menu.classList.add("active");
+  overlay.classList.add("active");
+});
+
+cerrar.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+
 tipoDoc.addEventListener('change', function() {
     if (this.value === 'dni') {
         numDoc.placeholder = "Número de DNI";
