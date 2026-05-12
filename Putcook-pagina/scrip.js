@@ -1,6 +1,45 @@
 const tipoDoc = document.getElementById('tipoDoc');
 const numDoc = document.getElementById('numDoc');
 
+
+const botones = document.querySelectorAll(".add-btn");
+const carrito = [];
+const carritoVisual = document.querySelector(".cart");
+
+botones.forEach(boton => {
+
+  boton.addEventListener("click", () => {
+
+    const producto = boton.closest(".box");
+
+    const nombre = producto.querySelector("h3").innerText;
+
+    const precioTexto = producto.querySelector(".precio").innerText;
+
+    const precio = parseFloat(
+      precioTexto.replace("S/", "")
+    );
+
+    carrito.push({
+      nombre,
+      precio
+    });
+
+    actualizarCarrito();
+  });
+
+});
+
+function actualizarCarrito() {
+
+  let total = 0;
+
+  carrito.forEach(producto => {
+    total += producto.precio;
+  });
+
+  carritoVisual.innerText = `🛒 S/ ${total.toFixed(2)}`;
+}
 let carrito = [];
 
 document.getElementById("cart-btn").addEventListener("click", () => {
